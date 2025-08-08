@@ -5,7 +5,7 @@ public class Member {
     private String name;
     private Grade grade;
 
-    public Member(String name, Long id, Grade grade) {
+    public Member(Long id,String name,Grade grade) {
         this.name = name;
         this.id = id;
         this.grade = grade;
