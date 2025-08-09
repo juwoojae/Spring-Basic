@@ -6,15 +6,17 @@ import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
 import org.springframework.boot.web.reactive.context.GenericReactiveWebApplicationContext;
 
+import java.sql.SQLOutput;
+
 public class MemberApp {
     public static void main(String[] args) {
-        //순수한 자바의 test
-        MemberService memberService =new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         Member member = new Member(1L, "memberA", Grade.VIP);
-        memberService.join(member);   //멤버 가입
+        memberService.join(member);
 
-        Member findMember =memberService.findMember(1L);
-        System.out.println("new member = " + member.getName());
-        System.out.println("findMember = " + findMember.getName());
+        Member findMember = memberService.findMember(1L);
+        System.out.println("new member = "+ member.getName());
+        System.out.println("find Member = "+ findMember.getName());
     }
 }
