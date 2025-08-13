@@ -33,4 +33,12 @@ public class ConfigurationSingletonTest {
         assertThat(orderService.getMemberRepository()).isSameAs(memberrepository);
 
     }
+    @Test
+    void configurationDeep(){
+        ApplicationContext ac= new AnnotationConfigApplicationContext(AppConfig.class);
+        AppConfig bean = ac.getBean(AppConfig.class);//AppConfig 자체도 스프링 빈에 올라간다
+
+        System.out.println("bean = " + bean.getClass());//Object 클래스의 getClass()  ->    메서드Class<?>반환    주로 리플렉션(Reflection), 런타임 타입 확인에 사용
+
+    }
 }
