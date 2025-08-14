@@ -2,6 +2,7 @@ package hello.core.scan;
 
 import hello.core.member.MemberService;
 import hello.core.AutoAppConfig;
+import hello.core.order.OrderServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
