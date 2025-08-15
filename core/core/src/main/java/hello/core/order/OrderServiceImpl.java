@@ -7,6 +7,7 @@ import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 //구현체가 DiscountPolicy 에 의존하는것이 아니라 , FixDiscountPolicy 에도 의존한다 (추상에 의존해야하는 데, 구현체에도 의존해버림)
 
@@ -18,7 +19,7 @@ public class OrderServiceImpl implements OrderService {
 
     //생성자 주입
     //생성자가 하나만있으면 @Autowired 생략이 가능하다
-    //@Autowired
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy){
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
