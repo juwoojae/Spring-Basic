@@ -1,5 +1,6 @@
 package hello.core.discount;
 
+import hello.core.annotation.MainDiscountPolicy;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -8,8 +9,9 @@ import org.springframework.stereotype.Component;
 
 // 정률할인 구현체 구현
 @Component
-@Primary  //의존관계 주입에서 빈 상충이 일어날때 @Primary 가 있으면
+//@Primary 의존관계 주입에서 빈 상충이 일어날때 @Primary 가 있으면
 // 다재끼고 얘가 1등
+@MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy{
     private int discountPercent =10;
 
