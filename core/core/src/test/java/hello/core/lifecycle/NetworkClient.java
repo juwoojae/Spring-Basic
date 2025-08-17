@@ -6,7 +6,7 @@ public class NetworkClient {
 
     public NetworkClient() {  //스프링 빈으로 등록할 class
         System.out.println("생성자호출 url = " + url);
-        connect();
+        connect();  //
         call("초기화 연결 메세지");
     }
 
@@ -28,4 +28,13 @@ public class NetworkClient {
         System.out.println("closs " + url);
     }
 
+   public void init(){
+       System.out.println("NetworkClient.init");
+       connect();  //
+       call("초기화 연결 메세지");
+   }
+   public void close(){
+       System.out.println("NetworkClient.close");
+       disconnect();
+   }
 }

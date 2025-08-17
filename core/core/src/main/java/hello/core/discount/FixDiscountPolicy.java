@@ -2,11 +2,9 @@ package hello.core.discount;
 
 import hello.core.member.Grade;
 import hello.core.member.Member;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component //컴포넌트 스캔에의해서 스프링 빈에 등록된다
-//
+@Component
 public class FixDiscountPolicy implements DiscountPolicy {
     private int discountFixAmount = 1000;
 
