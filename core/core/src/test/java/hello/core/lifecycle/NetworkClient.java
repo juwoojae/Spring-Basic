@@ -30,20 +30,14 @@ public class NetworkClient {
     public void disconnect() {
         System.out.println("closs " + url);
     }
-<<<<<<< Updated upstream
-
-=======
     @PostConstruct
->>>>>>> Stashed changes
+
    public void init(){
        System.out.println("NetworkClient.init");
        connect();  //
        call("초기화 연결 메세지");
    }
-<<<<<<< Updated upstream
-=======
    @PreDestroy
->>>>>>> Stashed changes
    public void close(){
        System.out.println("NetworkClient.close");
        disconnect();
